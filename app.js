@@ -1,7 +1,9 @@
 const express = require('express');
 const { getCharacters, getCharacterById, addOrUpdateCharacter, deleteCharacterById } = require('./dynamo');
 const app = express();
-app.use(express.json());
+const cors = require('cors')
+app.use(express.json(), cors());
+
 
 app.get('/', (req, res) => {
     res.send("Hellow World")
